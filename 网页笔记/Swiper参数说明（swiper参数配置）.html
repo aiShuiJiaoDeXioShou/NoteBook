@@ -1,0 +1,421 @@
+
+<!-- saved from url=(0041)http://www.xiaoshu168.com/jquery/103.html -->
+<html lang="zh-CN"><script src="./Swiper参数说明（swiper参数配置）_files/push.js.下载"></script><script id="allow-copy_script">(function agent() {
+    let unlock = false
+    document.addEventListener('allow_copy', (event) => {
+      unlock = event.detail.unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = (e) => {
+      if (unlock) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach((evt) => {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Swiper参数说明（swiper参数配置）</title>
+<meta name="keywords" content="Swiper参数说明,swiper参数配置,swiper初始化,swiper回调函数,swiper自由模式与滑块容器,swiper slides,swiper命名空间namespace">
+<meta name="description" content="Swiper参数说明（swiper参数配置）1.自由模式与滑块容器（Free Mode and Scroll Container)Parameter（参数）Type(类型)Default Value（默认值Example（例子）Description（说明）speednumber300600slides滑块...">
+
+
+
+
+    
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="google-site-verification" content="">
+    <meta name="baidu-site-verification" content="k8mglaSw5e">
+    <meta name="360-site-verification" content="48fd3ad9cb74b9dc3558bbee5f1d3c4f">
+    <meta name="baidu_union_verify" content="a43eb877c1ad90887c340f2a782e8bda">
+    <meta name="csrf-token" content="965PgLANkK1ivLs9CsyLRj8HKaaecXBYn2mL4jUr">
+        <link href="./Swiper参数说明（swiper参数配置）_files/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Swiper参数说明（swiper参数配置）_files/main.css" type="text/css">
+    <link rel="stylesheet" href="./Swiper参数说明（swiper参数配置）_files/animate.css" type="text/css">
+    <script type="text/javascript" src="./Swiper参数说明（swiper参数配置）_files/jquery.min.js.下载"></script>
+    <script type="text/javascript" src="./Swiper参数说明（swiper参数配置）_files/swiper.jquery.min.js.下载"></script>
+    <link rel="shortcut icon" href="http://www.xiaoshu168.com/home/default/images/xiaoshu168.com.ico">
+    <style type="text/css">
+        body{
+            background-color:#f8f8f8;
+            background-repeat:repeat;
+            background-size:inherit;
+            background-attachment:fixed;
+            background-position:center center;
+        }
+    </style>
+<script src="./Swiper参数说明（swiper参数配置）_files/share.js.下载"></script><link rel="stylesheet" href="./Swiper参数说明（swiper参数配置）_files/share_style1_16.css"></head>
+<body class="home blog" _c_t_common="1">
+    <!--头部-->
+<header class="header">
+    <section class="wrapper">
+        <!--菜单-->
+        <nav class="header-nav">
+            <div class="header-menu">
+                <ul class="menu">
+                    <a href="http://www.xiaoshu168.com/" class="logo left" title="小舒168">
+                                                    <img src="./Swiper参数说明（swiper参数配置）_files/1502867439640473.png" alt="小舒168">
+                                            </a>
+                    <li class="menu-item ">
+                        <a href="http://www.xiaoshu168.com/">首页</a>
+                    </li>
+                                                                        <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/php">PHP</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/linux">LINUX</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/mysql">Mysql</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/jquery">JS</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/golang">GoLang</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/swoole">Swoole</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/docker">Docker</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/html">HTML</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/redis">Redis</a>
+                            </li>
+                                                                                                <li class="menu-item ">
+                                <a href="http://www.xiaoshu168.com/wxapplet">小程序</a>
+                            </li>
+                                                                <li class="menu-item ">
+                        <a href="http://www.xiaoshu168.com/tag/laravel-packages">Laravel5 扩展包</a>
+                    </li>
+                    <li class="menu-item right ">
+                        <a target="_blank" href="http://www.xiaoshu168.com/sitemaps">地图</a>
+                    </li>
+                    <li class="menu-item right ">
+                        <a target="_blank" href="http://www.xiaoshu168.com/tags/list">标签</a>
+                    </li>
+                                        <li class="menu-item menu-item-search right">
+                        <form method="get" class="search-form" id="search_form" action="http://www.xiaoshu168.com/search" target="_blank">
+                            <input class="search-input" name="q" type="text" placeholder="请输入关键字，并按回车…">
+                            <a href="javascript:document:search_form.submit();" class="left" title="点击搜索">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </form>
+                    </li>
+                                    </ul>
+            </div>
+        </nav>
+        <!--菜单end-->
+    </section>
+</header>
+<!--头部end-->        <section class="container wrapper">
+        <section class="crumbs_wrap box triangle">
+            <h3>JS</h3>
+            <article class="crumbs">
+                <a itemprop="breadcrumb" href="http://www.xiaoshu168.com/">首页</a>&nbsp;-&nbsp;
+                                    <a itemprop="breadcrumb" href="http://www.xiaoshu168.com/jquery">JS</a> &nbsp;-&nbsp;
+                                <span class="current">Swiper参数说明（swiper参数配置）</span></article>
+        </section>
+        <section class="content content_left">
+        <section class="content-wrap">
+            <article class="entry box triangle">
+                <!-- 标题与信息 -->
+                <header class="post-head">
+                    <h2>Swiper参数说明（swiper参数配置）</h2>
+                    <div class="postinfo">
+                        <div class="left">
+                            <!--作者-->
+                            <span class="author">作者：xiaoshu</span>
+                            <span class="author">来源：xiaoshu168</span>
+                            <!--分类-->
+                                                        <span class="category"><a href="http://www.xiaoshu168.com/jquery" rel="category tag">JS</a></span>
+                                                        <!--时间-->
+                            <span class="date">2019-11-19 16:47:08</span>
+                        </div>
+                        <div class="right">
+                            <!--浏览量-->
+                            <span class="view"><i class="fa fa-eye"></i>35741</span>
+                            <!--点赞-->
+                            <span title="请先浏览本文章，再确定是否点赞！" class="like"><i class="fa fa-thumbs-o-up"></i>
+                                <span class="count">1003</span>
+                            </span>
+                        </div>
+                    </div>
+                </header>
+                <div class="content-post">
+                    <h2>Swiper参数说明（swiper参数配置）</h2><h2>1.自由模式与滑块容器（Free Mode and Scroll Container)</h2><table style="width: 768px;"><tbody><tr class="firstRow"><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">Description（说明）</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">speed</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">300</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">600</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">slides滑块动画之间的持续时间（单位ms）</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">eventTarget</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">‘wrapper’</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">‘container’</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">swipers事件对象，默认状态下所有的触控事件只能用于wrapper。如若需要其他元素包含在container内以及使用swipers,那么可以使用’container’.&nbsp;2.4.2版本新增</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">autoplay</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">5000</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">过渡延迟时间（单位ms），参数没有指定的情况下，不生效，（补充：当用户操作后autoplay失效）</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">autoplayDisableOninteraction</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">当设置为false时，用户操作之后（swipes,arrow以及pagination&nbsp;点击）autoplay不会被禁掉，用户操作之后每次都会重新启动autoplay。</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">autoplayStopOnLast</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">设置为false后autoplay在最后一个块下失效（在没有设置loop的情况下）</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">mode</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">‘horizontal’</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">‘vertical’</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">slides滑动方式，水平或垂直</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">loop</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">true&nbsp;为loop模式生效</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">loopAdditionalSlides</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">0</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">loop模式下slides数量增加个数</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">loopedSlides</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">1</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">在loop模式下使用slidesPerview:’auto’,还需使用该参数设置所要用到的loop个数</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">slidesPerView</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">number<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">or ‘auto’</p></td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">1</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">4</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">旋转模式下，设置slider’s容器能够同时显示的slides数量。另外，支持’auto’值，会根据容器container的宽度调整slides数目。‘auto’不兼容loop模式</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">slidesPerViewFit</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">仅当已设置了slidesPerView:’auto’，以及当slides的宽度大于容器，该参数生效。默认为true然后宽度大的slide&nbsp;过渡时会划分为边缘的两部分。为false时，slide&nbsp;transition&nbsp;会划分为比容器container大的多个slides</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">slidesPerGroup</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">1</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">定义slides的数量多少为一组，在旋转模式下有效。（carousel&nbsp;mode）</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">calculateHeight</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">当值为true时，Swiper根据slides内容计算容器高度。响应式布局中或不知道slides高度时十分有用（就像响应式的图片）</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">roundLengths</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">值为true时，Swiper会四舍五入宽度和高度，在响应式的滑块中包含误差时十分有用。</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">cssWidthAndHeight</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">值为true以及Swiper中的container，wrapper和slides没有高度</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">updateFormElements</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">当所有的内嵌图像（img标签）加载完成后Swiper会重新初始化。</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">watchActiveIndex</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">如果启用触屏事件期间会重新动态计算活动块的索引。</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">visiblilityFullfit</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">如果启用，仅有“可视”的slides会最后适应容器的大小</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">autoResize</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">值为false时，窗口尺寸改变时，禁掉slides自适应</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">DOManimation</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">在不支持css&nbsp;transitions(IE7-9)的浏览器上是否使用自定义的DOM动画</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">resistance</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean or “100%”</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">值为false时禁用resistant&nbsp;bounds（抵抗反弹）,设置为‘100%’时启用resistant（抵抗）模式</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">noSwiping</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">值为true时，当swiper新增类”noSwipingClass“的滑动块时，禁掉该元素的滑动。</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">preventLinks</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">启用时当碰触滑块（slides）时禁止&lt;a&gt;标签链接</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">preventLinksPropagation</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">如滑动过程中需要跟preventLinks一起禁用stopPropagation，设置值为true</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">initialSlide</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">0</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">初始块（页面）的索引</td></tr><tr><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">useCSS3Transforms</td><td valign="top" width="94" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="45" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="207" style="border-collapse: collapse; border-spacing: 0px;">值为false时禁用css3&nbsp;transforms（减少内存，提高性能，同时也降低了美观）,同时使用wrapper的left/top属性代替。</td></tr></tbody></table><h2>2.自由模式与滑块容器（Free Mode and Scroll Container)</h2><table><tbody><tr class="firstRow"><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="71" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="56" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="176" style="border-collapse: collapse; border-spacing: 0px;">Description（说明</td></tr><tr><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">freeMode</td><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="71" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="56" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="176" style="border-collapse: collapse; border-spacing: 0px;">若为真slide坐标不固定</td></tr><tr><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">freeModeFluid</td><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="71" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="56" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="176" style="border-collapse: collapse; border-spacing: 0px;">若为真，释放滑块之后仍会滑动一小会</td></tr><tr><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">scrollContainer</td><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="71" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="56" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="176" style="border-collapse: collapse; border-spacing: 0px;">设置为真时，让Swiper看上去像滑动区（scrollable&nbsp;area）</td></tr><tr><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">momentumRatio</td><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="71" style="border-collapse: collapse; border-spacing: 0px;">1</td><td valign="top" width="56" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="176" style="border-collapse: collapse; border-spacing: 0px;">设置的值越大，当释放滑块时的动量距离越大</td></tr><tr><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">momentumBounce</td><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="71" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="56" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="176" style="border-collapse: collapse; border-spacing: 0px;">false时禁用自由模式下的（free&nbsp;mode）动量弹性</td></tr><tr><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">momentumBounceRatio</td><td valign="top" width="77" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="71" style="border-collapse: collapse; border-spacing: 0px;">1</td><td valign="top" width="56" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="176" style="border-collapse: collapse; border-spacing: 0px;">值越大产生的动量弹性（momentum&nbsp;bounce）效果越明显</td></tr></tbody></table><h2 style="white-space: normal;">3.块（slides）偏移</h2><table><tbody><tr class="firstRow"><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="230" style="border-collapse: collapse; border-spacing: 0px;">Description（说明</td></tr><tr><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">centeredSlides</td><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="230" style="border-collapse: collapse; border-spacing: 0px;">若为真，那么活动块会居中，而非默认状态下的居左</td></tr><tr><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">offsetPxBefore</td><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">0</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">100</td><td valign="top" width="230" style="border-collapse: collapse; border-spacing: 0px;">指定slides与wrapper左边框的偏移量</td></tr><tr><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">offsetPxAfter</td><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">0</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">100</td><td valign="top" width="230" style="border-collapse: collapse; border-spacing: 0px;">指定slides与wrapper右边框的偏移量</td></tr><tr><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">offsetSlidesBefore</td><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">0</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="230" style="border-collapse: collapse; border-spacing: 0px;">滑块slides与wrapper左边框的偏移量等于等于指定滑块slides个数的宽度。这在响应式布局中而你又不知道slides宽度时，将十分有用。</td></tr><tr><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">offsetSlidesAfter</td><td valign="top" width="61" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">0</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">2</td><td valign="top" width="230" style="border-collapse: collapse; border-spacing: 0px;">滑块slides与wrapper右边框的偏移量等于等于指定滑块slides个数的宽度。这在响应式布局中而你又不知道slides宽度时，将十分有用。</td></tr></tbody></table><h2 style="white-space: normal;">4.触屏/鼠标事件效应（Touch/mouse&nbsp;interactions&nbsp;）</h2><table><tbody><tr class="firstRow"><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">Description（说明</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">touchRatio</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">1</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">0.8</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">触屏比率</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">simulateTouch</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">true,Swiper接受鼠标事件时与触屏事件相似。（单击以及拖曳滑块）</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">onlyExternal</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">值为true时，只能使用扩展API函数内的swipeRight&nbsp;或swiperLeft改变slides滑动，其他失效。正如例子里的tabs切换十分有用</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">followFinger</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">值为false时，仅当你释放slide时才会滑动，当你用手指按住滑块它不会动。</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">grabCursor</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">该选项给Swiper用户提供小小的贴心应用，值为true时，光标在Swiper上时成手掌状。</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">shortSwipes</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">值为false时，禁用short&nbsp;swipes</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">longSwipesRatid</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">0.5</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">0.3</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">Swiper&nbsp;中到上/下滑块的触发率</td></tr><tr><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">moveStartThreshold</td><td valign="top" width="66" style="border-collapse: collapse; border-spacing: 0px;">number</td><td valign="top" width="53" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">100</td><td valign="top" width="223" style="border-collapse: collapse; border-spacing: 0px;">滑动的临界值，临界值单位为px，如果触屏距离小于该值滑块不会运动。</td></tr></tbody></table><h2 style="white-space: normal;">5.Navigation</h2><table><tbody><tr class="firstRow"><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="43" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="192" style="border-collapse: collapse; border-spacing: 0px;">Description（说明</td></tr><tr><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">keyboardControl</td><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="43" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="192" style="border-collapse: collapse; border-spacing: 0px;">值为true时，水平模式下，能使用键盘左右方向键滑动，垂直模式下能使用上下方向键滑动</td></tr><tr><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">mousewheelControl</td><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="43" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="192" style="border-collapse: collapse; border-spacing: 0px;">值为true时，能够使用鼠标滑轮滑动swiper</td></tr><tr><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">mousewheelControlForceToAxis</td><td valign="top" width="102" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="52" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="43" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="192" style="border-collapse: collapse; border-spacing: 0px;">值为真时，鼠标轮滑会改变轴向，所以水平模式下的鼠标滑轮只作用于水平鼠标滑块，垂直的作用于垂直模式。</td></tr></tbody></table><h2 style="white-space: normal;">5.Pagination（分页器）(指示器)</h2><table><tbody><tr class="firstRow"><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="42" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="240" style="border-collapse: collapse; border-spacing: 0px;">Description（说明</td></tr><tr><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">pagination</td><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">string or HTML Element</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="42" style="border-collapse: collapse; border-spacing: 0px;">‘.my-pagination’</td><td valign="top" width="240" style="border-collapse: collapse; border-spacing: 0px;">css选择器中的分页。或者HTML元素内的分页元素</td></tr><tr><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">paginaClickable</td><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="42" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="240" style="border-collapse: collapse; border-spacing: 0px;">值为真时，当单击指示器时会执行过渡动画到目标slide</td></tr><tr><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">paginationAsRange</td><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="240" style="border-collapse: collapse; border-spacing: 0px;">为真时，跟可见块相关的指示器按钮会新增css类。当使用slidesPerview超过1时会十分有用。</td><td valign="top" width="240" style="border-collapse: collapse; border-spacing: 0px;"><br></td></tr><tr><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">createPagination</td><td valign="top" width="63" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="40" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="42" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="240" style="border-collapse: collapse; border-spacing: 0px;">值为真时，Swiper会在slider内生成与slides数量相同的SPAN标签。所有这些生成的span标签都在pagination容器内。每一个span标签都有一个”swiper-pagination-switch“类名，活动的span（及当前slide下的）有一个为”swiper-active-switch’的类名，对于这些使用样式十分有用。</td></tr></tbody></table><h2 style="white-space: normal;">6.命名空间namespace</h2><table><tbody><tr class="firstRow"><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">Description（说明</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">wrapperClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-wrapper’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘my-wrapper’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">Swiper内wrapper的css类。具体查看上面的例子</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">slideClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-slide’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘my-slide’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">Swiper内slide的css类名。具体查看上面的例子</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">slideActiveClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-slide-active’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘my-active-slide’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">Swiper内活动块的css类名。。。</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">slideActiveClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-slide-visible’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘my-visible-slide’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">Swiper内可视块的css类名。。。</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">slideElement</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘div’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘li’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">使用单一滑块的标签</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">noSwipingClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-no-swiping’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘stop-swiping’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">html元素使用的类名，当noSwiping参数设置为true时，用于禁止滑动</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">paginationElement</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘span’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘div’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">使用唯一指示按钮的标签</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">paginatinElementClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-pagination-switch’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘my-switch’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">使用多个指示按钮的类名</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">paginationActiveClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-active-switch’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘my-active-switch’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">当前活动指示按钮的类名</td></tr><tr><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">paginationVisibleClass</td><td valign="top" width="73" style="border-collapse: collapse; border-spacing: 0px;">string</td><td valign="top" width="75" style="border-collapse: collapse; border-spacing: 0px;">‘swiper-visible-switch’</td><td valign="top" width="54" style="border-collapse: collapse; border-spacing: 0px;">‘my-visible-switch’</td><td valign="top" width="182" style="border-collapse: collapse; border-spacing: 0px;">可见指示按钮的类名</td></tr></tbody></table><h2 style="white-space: normal;">7.回调函数（Callbacks）</h2><table style="width: 768px;"><tbody><tr class="firstRow"><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">Parameter（参数）</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">Type(类型)</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">Default&nbsp;Value（默认值</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">Example（例子）</td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">Description（说明</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">queueStatCallbacks</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">设置为true时，‘slideChangeStart’回调函数入队，所以在快速滑动过程中回调函数只被调用一次。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">queueEndCallbacks</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">boolean</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">false</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">true</td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">设置为true时，‘slideChangeEnd’回调函数入队，所以在快速滑动结束后回调函数只被调用一次。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onFirstInit</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">funciton</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper)<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">{</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，首次初始化后马上执行</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onInit</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，在其他所有的初始化/再初始化后马上执行</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSwiperCreated</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，当Swiper初始化完成，loop，pagination，等其他参数或方法生成之后执行</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onTouchStart</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，当碰触到slider时马上执行</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onTouchMove</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，当碰触slider到释放期间执行。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onTouchEnd</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，当释放slider时执行</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSlideReset</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，释放滑块之后，滑块将要滑到当前活动的slide时执行。freeMode模式下不生效。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSlideChangeStart</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">funciton</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，当动画开始过渡到另一slide时执行，即动画开始时执行。freeMode模式下不生效。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSlideChangeEnd</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，过渡动画结束后执行，即滑块活动停止后执行。freeMode模式下不生效。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSlideNext</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，与onSlideChangeStart相似，但该函数只能在滑向下一slide开始时生效</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSlidePrev</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">funciton</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，与onSlideChangeStart相似，但该函数只能在滑向上一slide开始时生效</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSlideTouch</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，当触碰事件发生后生效。与onToucStart相似，不过该函数会返回.clickedSlide和.clickedSlideIndex的值</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onImageReady</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，所有内置图像加载完成后执行，同时“updateOmImagesReady”需设置为“true’</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onMomentumBounce</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，执行于动量反弹（momentum&nbsp;bounce）过程中</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onResistanceBefore</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">funciton</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper,p){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，执行于negative&nbsp;resistance过程中。p-返回抵抗距离。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onResistanceAfter</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">funciton</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper,p){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，执行于positive&nbsp;resistance过程中。p-返回抵抗距离。</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSetWrapperTransition</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">function</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper,duration){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，每次当Swiper开始动画时执行</td></tr><tr><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">onSetWrapperTransform</td><td valign="top" width="80" style="border-collapse: collapse; border-spacing: 0px;">funciton</td><td valign="top" width="44" style="border-collapse: collapse; border-spacing: 0px;">-</td><td valign="top" width="86" style="border-collapse: collapse; border-spacing: 0px;">function(swiper,transform){<p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">//执行代码</p><p style="line-height: 1.6em; margin-top: 1em; margin-bottom: 1em;">}</p></td><td valign="top" width="179" style="border-collapse: collapse; border-spacing: 0px;">回调函数，swiper的容器wrapper改变其坐标时执行。返回带当前transform&nbsp;的偏移量的对象。<br><br></td></tr></tbody></table><p><br></p>
+                </div>
+                <!-- 分页 -->
+                <section class="pagination">
+                </section>
+                <!-- 按钮 -->
+                <section class="post-social">
+                    <!--文章点赞-->
+                    <div class="post-like">
+                        <a href="javascript:;" id="like" data-id="103" title="喜欢该文章，请点赞！">
+                            <i class="fa fa-thumbs-up">赞</i>(<span class="count">1003</span>)
+                        </a>
+                    </div>
+                </section>
+                <div class="bdsharebuttonbox bdshare-button-style1-16" data-bd-bind="1640239656339">
+                    <span>分享：</span>
+                    <a href="http://www.xiaoshu168.com/jquery/103.html#" class="bds_more fa fa-share-alt" data-cmd="more"></a>
+                    <a href="http://www.xiaoshu168.com/jquery/103.html#" class="bds_qzone fa fa-qq" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a href="http://www.xiaoshu168.com/jquery/103.html#" class="bds_tsina fa fa-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="http://www.xiaoshu168.com/jquery/103.html#" class="bds_tqq fa fa-tencent-weibo" data-cmd="tqq" title="分享到腾讯微博"></a>
+                    <a href="http://www.xiaoshu168.com/jquery/103.html#" class="bds_renren fa fa-renren" data-cmd="renren" title="分享到人人网"></a>
+                    <a href="http://www.xiaoshu168.com/jquery/103.html#" class="bds_weixin fa fa-weixin" data-cmd="weixin" title="分享到微信"></a>
+                </div>
+                <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+                <!-- 版权 -->
+                <section class="post_declare">
+                    <p>本文由：xiaoshu168 作者：xiaoshu发表，转载请注明来源！</p>
+                                        <div class="tags">
+                        标签：<a href="http://www.xiaoshu168.com/tag/swiper" rel="tag">Swiper插件</a>
+                    </div>
+                                    </section>
+            </article>
+            <!-- 作者 -->
+            <!-- 上下篇
+            <section class="prevnext box triangle wow bounceInUp">
+                <div class="prev">
+                    <a href="" rel="prev"></a>
+                </div>
+                <div class="next">
+                    <a href="" rel="next"></a>
+                </div>
+            </section>-->
+            <!-- 相关文章 -->
+            <!-- 相关文章 -->
+            <section class="hotlike_posts box triangle">
+                <!--热评文章-->
+                <section class="hot">
+                    <!--标题-->
+                    <h3>相关阅读</h3>
+                    <!--标题end-->
+                    <ul class="layout_ul">
+                                            </ul>
+                </section>
+                <!--最赞的文章-->
+            </section>
+            <!--评论 comment-->
+            <!--评论列表 comment-list-->
+        </section>
+            <aside class="sidebar">
+                <!--博客-->
+                <article class="sidebar_widget box widget_salong_posts triangle">
+                    <div class="sidebar_title"><h3>推荐文章</h3></div>
+                    <ul>
+                                                <li>
+                            <article class="postlist">
+                                <figure>
+                                    <a href="http://www.xiaoshu168.com/jquery/148.html" title="layer关闭弹窗（多种关闭弹窗方法） 有()人点赞">
+                                        <img class="thumb" src="./Swiper参数说明（swiper参数配置）_files/275x160-1505529601477293.jpeg" alt="layer关闭弹窗（多种关闭弹窗方法）">
+                                    </a>
+                                </figure>
+                                <h3>
+                                    <a href="http://www.xiaoshu168.com/jquery/148.html" title="layer关闭弹窗（多种关闭弹窗方法）">layer关闭弹窗（多种关闭弹窗方法）</a>
+                                </h3>
+                                <div class="homeinfo">
+                                    <!--分类-->
+                                                                        <span class="category"><a href="http://www.xiaoshu168.com/jquery" rel="category tag">JS</a></span>
+                                                                        <!--时间-->
+                                    <span class="date">2019-11-19</span>
+                                    <!--点赞-->
+                                    <span class="favoriteup">
+                                        <span class="wpfp-span"><i class="fa fa-eye"></i>134451</span>
+                                    </span>
+                                </div>
+                            </article>
+                        </li>
+                                                <li>
+                            <article class="postlist">
+                                <figure>
+                                    <a href="http://www.xiaoshu168.com/jquery/150.html" title="layer刷新页面 有()人点赞">
+                                        <img class="thumb" src="./Swiper参数说明（swiper参数配置）_files/275x160-1505530897864491.jpeg" alt="layer刷新页面">
+                                    </a>
+                                </figure>
+                                <h3>
+                                    <a href="http://www.xiaoshu168.com/jquery/150.html" title="layer刷新页面">layer刷新页面</a>
+                                </h3>
+                                <div class="homeinfo">
+                                    <!--分类-->
+                                                                        <span class="category"><a href="http://www.xiaoshu168.com/jquery" rel="category tag">JS</a></span>
+                                                                        <!--时间-->
+                                    <span class="date">2019-11-19</span>
+                                    <!--点赞-->
+                                    <span class="favoriteup">
+                                        <span class="wpfp-span"><i class="fa fa-eye"></i>22170</span>
+                                    </span>
+                                </div>
+                            </article>
+                        </li>
+                                                <li>
+                            <article class="postlist">
+                                <figure>
+                                    <a href="http://www.xiaoshu168.com/jquery/136.html" title="layui动态添加表单渲染 有()人点赞">
+                                        <img class="thumb" src="./Swiper参数说明（swiper参数配置）_files/275x160-1505212468437231.jpeg" alt="layui动态添加表单渲染">
+                                    </a>
+                                </figure>
+                                <h3>
+                                    <a href="http://www.xiaoshu168.com/jquery/136.html" title="layui动态添加表单渲染">layui动态添加表单渲染</a>
+                                </h3>
+                                <div class="homeinfo">
+                                    <!--分类-->
+                                                                        <span class="category"><a href="http://www.xiaoshu168.com/jquery" rel="category tag">JS</a></span>
+                                                                        <!--时间-->
+                                    <span class="date">2019-11-19</span>
+                                    <!--点赞-->
+                                    <span class="favoriteup">
+                                        <span class="wpfp-span"><i class="fa fa-eye"></i>18117</span>
+                                    </span>
+                                </div>
+                            </article>
+                        </li>
+                                                <li>
+                            <article class="postlist">
+                                <figure>
+                                    <a href="http://www.xiaoshu168.com/jquery/172.html" title="js唤起微信功能 有()人点赞">
+                                        <img class="thumb" src="./Swiper参数说明（swiper参数配置）_files/275x160-1506423332455735.jpeg" alt="js唤起微信功能">
+                                    </a>
+                                </figure>
+                                <h3>
+                                    <a href="http://www.xiaoshu168.com/jquery/172.html" title="js唤起微信功能">js唤起微信功能</a>
+                                </h3>
+                                <div class="homeinfo">
+                                    <!--分类-->
+                                                                        <span class="category"><a href="http://www.xiaoshu168.com/jquery" rel="category tag">JS</a></span>
+                                                                        <!--时间-->
+                                    <span class="date">2019-11-19</span>
+                                    <!--点赞-->
+                                    <span class="favoriteup">
+                                        <span class="wpfp-span"><i class="fa fa-eye"></i>15369</span>
+                                    </span>
+                                </div>
+                            </article>
+                        </li>
+                                                <li>
+                            <article class="postlist">
+                                <figure>
+                                    <a href="http://www.xiaoshu168.com/jquery/118.html" title="layui全选,单选（checkbox） 有()人点赞">
+                                        <img class="thumb" src="./Swiper参数说明（swiper参数配置）_files/275x160-1504621097744390.jpeg" alt="layui全选,单选（checkbox）">
+                                    </a>
+                                </figure>
+                                <h3>
+                                    <a href="http://www.xiaoshu168.com/jquery/118.html" title="layui全选,单选（checkbox）">layui全选,单选（checkbox）</a>
+                                </h3>
+                                <div class="homeinfo">
+                                    <!--分类-->
+                                                                        <span class="category"><a href="http://www.xiaoshu168.com/jquery" rel="category tag">JS</a></span>
+                                                                        <!--时间-->
+                                    <span class="date">2019-11-19</span>
+                                    <!--点赞-->
+                                    <span class="favoriteup">
+                                        <span class="wpfp-span"><i class="fa fa-eye"></i>9458</span>
+                                    </span>
+                                </div>
+                            </article>
+                        </li>
+                                                <li>
+                            <article class="postlist">
+                                <figure>
+                                    <a href="http://www.xiaoshu168.com/jquery/131.html" title="判断checkbox是否选中(Layul判断是否选中) 有()人点赞">
+                                        <img class="thumb" src="./Swiper参数说明（swiper参数配置）_files/275x160-1505100930258038.jpeg" alt="判断checkbox是否选中(Layul判断是否选中)">
+                                    </a>
+                                </figure>
+                                <h3>
+                                    <a href="http://www.xiaoshu168.com/jquery/131.html" title="判断checkbox是否选中(Layul判断是否选中)">判断checkbox是否选中(Layul判断是否选中)</a>
+                                </h3>
+                                <div class="homeinfo">
+                                    <!--分类-->
+                                                                        <span class="category"><a href="http://www.xiaoshu168.com/jquery" rel="category tag">JS</a></span>
+                                                                        <!--时间-->
+                                    <span class="date">2019-11-19</span>
+                                    <!--点赞-->
+                                    <span class="favoriteup">
+                                        <span class="wpfp-span"><i class="fa fa-eye"></i>8861</span>
+                                    </span>
+                                </div>
+                            </article>
+                        </li>
+                                            </ul>
+                </article>
+            </aside>
+        </section>
+    </section>
+    <footer class="footer">
+    <!-- 版权 -->
+    <section class="copyright">
+        <span>联系邮箱&nbsp;645064175@qq.com</span>
+        <p> 版权所有&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">陕ICP备17015244号</a> </p>
+        <a href="http://www.xiaoshu168.com/map/siteMap1.xml">网站地图</a>
+    </section>
+    <section class="salongtheme">
+        <span><script>(function(){
+var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?79682c31816600fa68b59e222adc51f6":"https://jspassport.ssl.qhimg.com/11.0.1.js?79682c31816600fa68b59e222adc51f6";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script><script src="./Swiper参数说明（swiper参数配置）_files/11.0.1.js.下载" id="sozz"></script><script charset="utf-8" src="./Swiper参数说明（swiper参数配置）_files/ab77b6ea7f3fbf79.js.下载"></script>
+<script src="./Swiper参数说明（swiper参数配置）_files/z_stat.php" language="JavaScript"></script></span>
+    </section>
+    <!-- 版权end -->
+</footer>    <section class="footer-popup">
+        <a class="side_btn top" id="back-to-top" href="javascript:;" title="返回顶部" style="width: 45px; height: 45px; background: url(&quot;/home/default/images/top_bg.png&quot;) -1px -47px no-repeat; display: none;">
+        </a>
+    </section>
+    <script type="text/javascript" src="./Swiper参数说明（swiper参数配置）_files/wow.min.js.下载"></script>
+        <script type="text/javascript" src="./Swiper参数说明（swiper参数配置）_files/info.js.下载"></script>
+    <script>
+        $(window).scroll(function () {
+            var scrollTop = $(window).scrollTop();
+            scrollTop > 300 ? $("#back-to-top").fadeIn(200).css("display","block") : $("#back-to-top").fadeOut(200);
+        });
+        $('#back-to-top').click(function (e) {
+            $('html,body').animate({ scrollTop:0});
+        });
+    </script>
+
+<div id="fatkun-drop-panel">
+        <a id="fatkun-drop-panel-close-btn">×</a>
+            <div id="fatkun-drop-panel-inner">
+                <div class="fatkun-content">
+                    <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892"><path d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z" p-id="5893"></path></svg>
+                    <div class="fatkun-title">拖拽到此处</div>
+                    <div class="fatkun-desc">图片将完成下载</div>
+                </div>
+            </div>
+    </div></body></html>

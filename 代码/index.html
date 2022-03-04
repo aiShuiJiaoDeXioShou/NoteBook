@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向函数式编程</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            //函数式编程规范
+            function a(name, funb) {
+                return funb(name)
+            }
+            let val = a('这就是传说当中的函数式编程', name => name)
+            console.log(val)
+        }
+
+        {
+            // 简化原生JS DOM操作
+            // let Y = {}
+            function Y(query){
+                
+               return document.querySelectorAll(query)
+            }
+        }
+        {
+            // 简易的Vue操作
+            let Y = {
+                id:'',
+                methods:{
+
+                },
+                data(){
+                    return {
+
+                    }
+                }
+            }
+            new Proxy(Y.data(),{
+                get(){
+
+                },
+                set(){
+                    
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

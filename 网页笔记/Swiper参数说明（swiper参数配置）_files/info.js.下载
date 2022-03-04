@@ -1,0 +1,17 @@
+/**
+ * Created by Administrator on 2017/8/15 0015.
+ */
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+$("#like").click(function () {
+    $.post('/news/info/like',{id:$(this).data('id')},function ( msg ) {
+        if( msg == 'success' )
+        {
+            var num = parseInt($("#like").find('.count').html())+1;
+            $("#like").find('.count').html(num);
+        }
+    })
+});

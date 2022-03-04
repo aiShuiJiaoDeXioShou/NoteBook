@@ -1,0 +1,29 @@
+KoroFileHeader vscode注释插件
+
+###在线工具合集：
+
+1.在线代码编辑器：
+	写作：https://www.bejson.com/pages/cooleditor/
+	代码高亮：http://codeinword.com/
+
+2.在线写作平台：
+	写作编辑器：https://stackedit.io/app#
+	思维导图的制作：https://www.processon.com/diagrams
+3.在线仓库：
+	https://github.com/
+
+4.在线学习平台：
+	https://www.bilibili.com/
+
+5.在线api
+	https://www.runoob.com/
+	https://www.w3school.com.cn/
+	https://developer.android.google.cn/guide
+	https://weread.qq.com/
+
+6.社交网站
+	https://www.zhihu.com/hot
+	https://www.csdn.net/
+
+7.素才网站
+	ico:https://www.iconfont.cn/collections/index?spm=a313x.7781069.1998910419.8&type=3&page=3
