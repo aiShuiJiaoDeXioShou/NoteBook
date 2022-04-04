@@ -4,15 +4,15 @@
 
 项目结构
 
-![img](https://p.ananas.chaoxing.com/star3/origin/f5c7ae17a2256d1629311795b5875d71.png)
+![img](https://gitee.com/theCompassWillAlsoGetLost/typora-picture-resources2/raw/master/img/f5c7ae17a2256d1629311795b5875d71.png)
 
 配置数据库
 
-![img](https://p.ananas.chaoxing.com/star3/origin/2b61b8b94b02647f59ac2cd84e06e2bc.png)
+![img](https://gitee.com/theCompassWillAlsoGetLost/typora-picture-resources2/raw/master/img/2b61b8b94b02647f59ac2cd84e06e2bc.png)
 
 数据库和相关表
 
-![img](https://p.ananas.chaoxing.com/star3/origin/2d96c3c151576a23441576beb387c5e5.png)
+![img](https://gitee.com/theCompassWillAlsoGetLost/typora-picture-resources2/raw/master/img/2d96c3c151576a23441576beb387c5e5.png)
 
 核心代码---server层，更多请去翻阅源码
 
@@ -22,7 +22,7 @@
 
 注册或者登入
 
-![img](https://p.ananas.chaoxing.com/star3/origin/b7a2bf06b38438551fa8442be5120640.png)
+![img](https://gitee.com/theCompassWillAlsoGetLost/typora-picture-resources2/raw/master/img/b7a2bf06b38438551fa8442be5120640.png)
 
 注册，点击注册输入yangteng，password：yt1234
 
