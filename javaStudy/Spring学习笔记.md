@@ -429,6 +429,14 @@ URL resource = getClass().getClassLoader().getResource(url);//注意如果有中
 
 > <img src="https://gitee.com/theCompassWillAlsoGetLost/typora-picture-resources2/raw/master/img/image-20211125082831439.png" alt="image-20211125082831439" style="zoom:50%;" />
 
+## 2. 解决tomcat乱码问题
+
+找到：
+
+![img](https://gitee.com/theCompassWillAlsoGetLost/typora-picture-resources2/raw/master/img/20200312124030665.png)
+
+将java.util.logging.ConsoleHandler.encoding = UTF-8 改成 java.util.logging.ConsoleHandler.encoding = GBK
+
 # Spring
 
 ### 1.javaSpring-Mevan项目导入Spring

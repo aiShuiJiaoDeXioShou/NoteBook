@@ -332,13 +332,11 @@ fruits.splice(2, 1, "Lemon", "Kiwi");
 
 语法:
 
-~~~js
+```js
 let tagIndex( = 数组.findIndex(res=>{
     return res == 值
 })
-~~~
-
-
+```
 
 ## 2.BOM对象
 
@@ -365,7 +363,6 @@ let tagIndex( = 数组.findIndex(res=>{
 1. 给一个HTML元素设置一个整体样式
 
    ![img](https://gitee.com/theCompassWillAlsoGetLost/typora-picture-resources2/raw/master/img/b67b16d84d10d6efe76cc1048685f21a.png)
-
 
 ## 4.js里面的正则表达式
 
@@ -789,13 +786,13 @@ $(".comment").unbind()
 
    ```text
    内容操作，指的是使用jQuery来操作一个元素的文本内容、值内容等。在jQuery中，对于内容操作，我们有以下3种方法。
-   
+
    （1）html()
-   
+
    （2）text()
-   
+
    （3）val()
-   
+
    其中，html()和text()这两个方法用于操作一般元素，而val()方法用于操作表单元素
    ```
 3. 具体用法
@@ -1097,7 +1094,7 @@ fn也是一个可选参数，表示动画执行完成后的回调函数。
 
 - **（1）slideUp()和slideDown()**
 - **（2）slideToggle()**
--
+- 
 
 ### 一、slideUp()和slideDown()
 
@@ -1209,7 +1206,7 @@ jquery.color.js是依赖jQuery库存在的，因此jquery.color.js文件必须�
                })
                return false;
            })  
-   
+
     $(function (){
          $.get("http://localhost:8080/javaEEWeb_war_exploded/ajaxServlet",function (data){
              alert(data)
@@ -1221,22 +1218,22 @@ jquery.color.js是依赖jQuery库存在的，因此jquery.color.js文件必须�
 
    ```java
    package com.example.javaEEWeb;
-   
+
    import javax.servlet.*;
    import javax.servlet.http.*;
    import javax.servlet.annotation.*;
    import java.io.IOException;
-   
+
    @WebServlet(name = "ajaxServlet", value = "/ajaxServlet")
    public class ajaxServlet extends HttpServlet {
        @Override
        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            response.getWriter().write("hello java");
        }
-   
+
        @Override
        protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-   
+
        }
    }
    ```
@@ -1343,14 +1340,14 @@ $(function (){
          鼠标悬停几秒钟查看此处动态绑定的提示信息！
        </span>
      </div>
-     
+
      var app2 = new Vue({
        el: '#app-2',
        data: {
          message: '页面加载于 ' + new Date().toLocaleString()
        }
      })
-     
+
      ```
 
 ### 2. 常用api
@@ -1453,7 +1450,7 @@ $(function (){
    				    ]
    				  }
    				})
-   
+
    ```
 
    ```html
@@ -1475,7 +1472,7 @@ $(function (){
    ```
 
    ```java
-   
+
    ```
 
 #### 4.单向数据绑定
@@ -1617,7 +1614,7 @@ console.log(event.key)，将真名绑定在vue事件后面就行了
                 show(event) {
                     //这个可以打印按下键的值
                     console.log(event.key)
-          
+        
                 }
             }
         });
@@ -1657,9 +1654,9 @@ directives: {
 
 #### 路由守卫:
 
-调用`beforeEach`方法,to表示即将进入的,from表示当前的,next是一个路由方法操控路由,下面是判断是否登入
+调用 `beforeEach`方法,to表示即将进入的,from表示当前的,next是一个路由方法操控路由,下面是判断是否登入
 
-~~~js
+```js
 const router = new VueRouter({
   routes
 })
@@ -1677,11 +1674,11 @@ router.beforeEach((to,from,next) => {
     next()
   }
 })
-~~~
+```
 
 storge将数据储存在浏览器缓存方法:
 
-~~~js
+```js
 //将数据保存到浏览器中
 const key = "key"
 let itemLocalStorage = {
@@ -1695,9 +1692,7 @@ let itemLocalStorage = {
     }
 }
 export default itemLocalStorage
-~~~
-
-
+```
 
 ### 常用组件库
 
@@ -1707,20 +1702,20 @@ export default itemLocalStorage
 
 全部引入与按需引入
 
-~~~js
+```js
 //全部引入
 import vant from 'vant'
 Vue.use(vant)
 //按需引入
 import {Button} from 'vant'
 Vue.use(Button)
-~~~
+```
 
 #### mockjs
 
 mockjs可以不通过后端直接进行test测试
 
-` npm install mockjs -D   `
+`npm install mockjs -D  `
 
 安装mockjs -D 表示在生产环境下不打包
 
@@ -1728,24 +1723,24 @@ mockjs可以不通过后端直接进行test测试
 
 新建文件mockjs：
 
-~~~js
+```js
 import Mock from 'mockjs'
 //模拟请求与响应第一个参数是url,第二个是模拟结果
 Mock.mock('http://localhost:8081/aoteman',{
     code:0,
     msg:'请求成功!'
 })
-~~~
+```
 
 在main中引用：
 
-~~~js
+```js
 import './tool/api/mock.js'
-~~~
+```
 
 它能自动拦截所有请求
 
-~~~js
+```js
 qingqiu() {
     Axios({
         method: 'get',
@@ -1754,7 +1749,7 @@ qingqiu() {
         console.log(res)
     })
 }
-~~~
+```
 
 #### 动漫组件库：
 
@@ -1762,32 +1757,32 @@ qingqiu() {
 
 安装--`npm install animate.css`，只想要有一个组件有动漫效果，请把元素加在指定Vue的根元素上面
 
-~~~html
+```html
 <transition enter-active-class="animate__bounceInRight" mode="out-in">
     <router-view/>
 </transition>
 <div class="animate__animated">
     <van-search v-model="value" shape="round" placeholder="请输入搜索关键词"/>
 </div>
-~~~
+```
 
 main文件:
 
-~~~js
+```js
 import 'animate.css'
-~~~
+```
 
 #### 图表库
 
 引入v-charts图标库：
 
-~~~shell
+```shell
 npm install v-charts echarts -S
-~~~
+```
 
 引入全部图表
 
-~~~js
+```js
 // main.js
 import Vue from 'vue'
 import VCharts from 'v-charts'
@@ -1799,21 +1794,21 @@ new Vue({
   el: '#app',
   render: h => h(App)
 })
-~~~
+```
 
 #### 文本编辑器
 
 引入文本编辑器
 
-~~~shell
+```shell
 npm install tinymce@4.7.5 -S
 npm install @tinymce/tinymce-vue@3.0.1 -S
 npm install tinymce --savex
-~~~
+```
 
 引入需要的插件
 
-~~~js
+```js
 import tinymce from 'tinymce/tinymce'
 import 'tinymce/themes/modern/theme'
 import Editor from '@tinymce/tinymce-vue'
@@ -1826,13 +1821,13 @@ import 'tinymce/plugins/contextmenu'
 import 'tinymce/plugins/wordcount'
 import 'tinymce/plugins/colorpicker'
 import 'tinymce/plugins/textcolor'
-~~~
+```
 
 但是这写是英文的，还需要引入中文语言包，找到tinymce在node_mode里面的位置，将中文语言包放入即可
 
 初始化编辑对象
 
-~~~js
+```js
 init: {
     skin_url: "/tinymce/skins/lightgray",
     height: 300,
@@ -1840,28 +1835,26 @@ init: {
     toolbar:"bold italic underline strikethrough | fontsizeselect | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote | undo redo | link unlink image code | removeformat",
     branding: false,
 },
-~~~
+```
 
 html代码
 
-~~~html
+```html
 <el-form-item label="商品详情">
     <editor :init="init"></editor>
 </el-form-item>
-~~~
+```
 
 vue代码
 
-~~~js
+```js
 components: {
     Editor,
 },
 mounted() {
     tinymce.init({})
 },
-~~~
-
-
+```
 
 ### 拦截器
 
@@ -1869,11 +1862,9 @@ mounted() {
 
 ### 打包部署
 
-~~~shell
+```shell
 npm run-script build
-~~~
-
-
+```
 
 ## [钩子函数](https://cn.vuejs.org/v2/guide/custom-directive.html#钩子函数)
 
@@ -1906,16 +1897,16 @@ computed:{
                 }
     			//当修改时执行下面方法
    				set(value){
-          
+        
                 }
            }
 ```
 
 ### 5.监视属性watch
 
-**使用方式：**在vue中创建watch属性，当监视对象发生变化的时候，调用与属性同名函数
+** 使用方式：** 在vue中创建watch属性，当监视对象发生变化的时候，调用与属性同名函数
 
-**监视范围:**vue对象的属性在data中和计算属性都能监视
+** 监视范围: ** vue对象的属性在data中和计算属性都能监视
 
 #### 代码：
 
@@ -2113,11 +2104,11 @@ data(){
 	<body>
 		<!-- 
 				面试题：react、vue中的key有什么作用？（key的内部原理）
-	
+
 						1. 虚拟DOM中key的作用：
 						key是虚拟DOM对象的标识，当数据发生变化时，Vue会根据【新数据】生成【新的虚拟DOM】, 
 						 随后Vue进行【新虚拟DOM】与【旧虚拟DOM】的差异比较，比较规则如下：
-					
+				
 						2.对比规则：
 						(1).旧虚拟DOM中找到了与新虚拟DOM相同的key：
 						①.若虚拟DOM中内容没变, 直接使用之前的真实DOM！
@@ -2125,7 +2116,7 @@ data(){
 
 									(2).旧虚拟DOM中未找到与新虚拟DOM相同的key
 												创建新的真实DOM，随后渲染到到页面。
-							
+						
 						3. 用index作为key可能会引发的问题：
 							1. 若对数据进行：逆序添加、逆序删除等破坏顺序操作:
 									产生没有必要的真实DOM更新 ==> 界面效果没问题, 但效率低。
@@ -2734,7 +2725,7 @@ npm init @vitejs/app
           	return Reflect.deleteProperty(target, prop)
           }
       })
-      
+
       proxy.name = 'tom'   
       ```
 
@@ -2748,7 +2739,7 @@ npm init @vitejs/app
   - ref通过 ``Object.defineProperty()``的 ``get``与 ``set``来实现响应式（数据劫持）。
   - reactive通过使用 `<strong style="color:#DD5145">`Proxy `</strong>`来实现响应式（数据劫持）, 并通过 `<strong style="color:#DD5145">`Reflect `</strong>`操作 `<strong style="color:orange">`源对象 `</strong>`内部的数据。
 - 从使用角度对比：
-  - ref定义的数据：操作数据 `<strong style="color:#DD5145">`需要 ``</strong>````.value ``，读取数据时模板中直接读取`<strong style="color:#DD5145">```不需要`</strong>`````.value``。
+  - ref定义的数据：操作数据 `<strong style="color:#DD5145">`需要 ``</strong>````.value ``，读取数据时模板中直接读取 `<strong style="color:#DD5145">```不需要</strong>``````.value``。
   - reactive定义的数据：操作数据与读取数据：`<strong style="color:#DD5145">`均不需要 ``</strong>````.value``。
 
 #### 6.setup的两个注意点
@@ -2771,7 +2762,7 @@ npm init @vitejs/app
 
   ```js
   import {computed} from 'vue'
-  
+
   setup(){
       ...
   	//计算属性——简写,这里可以直接用对象,相当于在对象里面添加了某个属性
@@ -2805,12 +2796,12 @@ npm init @vitejs/app
   watch(sum,(newValue,oldValue)=>{
   	console.log('sum变化了',newValue,oldValue)
   },{immediate:true})
-  
+
   //情况二：监视多个ref定义的响应式数据
   watch([sum,msg],(newValue,oldValue)=>{
   	console.log('sum或msg变化了',newValue,oldValue)
   }) 
-  
+
   /* 情况三：监视reactive定义的响应式数据
   			若watch监视的是reactive定义的响应式数据，则无法正确获得oldValue！！
   			若watch监视的是reactive定义的响应式数据，则强制开启了深度监视 
@@ -2818,17 +2809,17 @@ npm init @vitejs/app
   watch(person,(newValue,oldValue)=>{
   	console.log('person变化了',newValue,oldValue)
   },{immediate:true,deep:false}) //此处的deep配置不再奏效
-  
+
   //情况四：监视reactive定义的响应式数据中的某个属性
   watch(()=>person.job,(newValue,oldValue)=>{
   	console.log('person的job变化了',newValue,oldValue)
   },{immediate:true,deep:true}) 
-  
+
   //情况五：监视reactive定义的响应式数据中的某些属性
   watch([()=>person.job,()=>person.name],(newValue,oldValue)=>{
   	console.log('person的job变化了',newValue,oldValue)
   },{immediate:true,deep:true})
-  
+
   //特殊情况
   watch(()=>person.job,(newValue,oldValue)=>{
       console.log('person的job变化了',newValue,oldValue)
@@ -2923,7 +2914,7 @@ npm init @vitejs/app
   	<input type="text" v-model="keyword">
   	<h3>{{keyword}}</h3>
   </template>
-  
+
   <script>
   	import {ref,customRef} from 'vue'
   	export default {
@@ -3087,7 +3078,7 @@ npm init @vitejs/app
       }),
       template: '<button @click="count++">Clicked {{ count }} times.</button>'
     })
-    
+
     //注册全局指令
     Vue.directive('focus', {
       inserted: el => el.focus()
@@ -3129,7 +3120,7 @@ npm init @vitejs/app
     .v-leave-to {
       opacity: 0;
     }
-    
+
     .v-leave-from,
     .v-enter-to {
       opacity: 1;
